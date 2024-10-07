@@ -7,3 +7,7 @@ Threads only has one method: **public void run(){}**
 Concurrent does not equal to Parallel
 
 Non-blocking IO can be used to perform concurrency. Detect if the thread is not writing then is it reading? There is no fixed format compared to blocking IO where you must receive the msg from client before server respond back or vice versa. NIO allows for either client or server to send msg first, no fixed format.
+
+Two client can connect to same server.
+
+One server socket only can listen on one port.

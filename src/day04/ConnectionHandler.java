@@ -23,7 +23,7 @@ public class ConnectionHandler implements Runnable {
    @Override
    public void run() {
 
-      String name = Thread.currentThread().getName();
+      String name = Thread.currentThread().getName(); // getting the name of the thread
 
       try {
          // Get the input stream
@@ -39,9 +39,8 @@ public class ConnectionHandler implements Runnable {
          String msg = br.readLine();
          System.out.printf("[%s]>>> MSG from client: %s\n", name, msg);
 
-         msg = "timestamp=%s, msg=%s \n".formatted(
-            (new Date()).toString(), msg.toUpperCase()
-         );
+         msg = "timestamp=%s, msg=%s \n".formatted( // record of the message
+               (new Date()).toString(), msg.toUpperCase());
 
          bw.write(msg);
          bw.flush();
@@ -51,5 +50,5 @@ public class ConnectionHandler implements Runnable {
          ex.printStackTrace();
       }
    }
-   
+
 }

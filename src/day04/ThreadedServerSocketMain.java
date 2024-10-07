@@ -21,7 +21,7 @@ public class ThreadedServerSocketMain {
 
         // Default port number
         int port = 3000;
-        if (args.length > 0)
+        if (args.length > 0) // if string not empty,convert to integer
             port = Integer.parseInt(args[0]);
 
         System.out.printf(">> Listening on port %d\n", port);
@@ -29,7 +29,7 @@ public class ThreadedServerSocketMain {
         String name = Thread.currentThread().getName();
 
         // Create a thread pool
-        ExecutorService thrPool = Executors.newFixedThreadPool(3);
+        ExecutorService thrPool = Executors.newFixedThreadPool(3); // creating threadpool with 3 workers
 
         // Create the server
         ServerSocket server = new ServerSocket(port);

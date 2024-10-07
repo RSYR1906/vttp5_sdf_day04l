@@ -8,19 +8,20 @@ public class ThreadedServerMain {
    public static void main(String[] args) {
 
       // Create a fixed thread pool
-      ExecutorService thrPool = Executors.newFixedThreadPool(2);
+      ExecutorService thrPool = Executors.newFixedThreadPool(2); // creating a threadpool consisting of two threads(aka
+                                                                 // workers)
 
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 10; i++) { // 10 tasks for 2 threads to work on
          // Create a work for the thread to perform
          System.out.println(">>> MAIN: Creating thread " + i);
          ClientThread t = new ClientThread("No " + i);
          // Pass the work to the pool
-         thrPool.submit(t);
-         //t.run();
+         thrPool.submit(t);   
+         // t.run();
       }
 
       System.out.println("\n\n\n=================\nMAIN: Main thread completed");
-      
+
    }
-   
+
 }
